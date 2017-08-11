@@ -1,0 +1,42 @@
+{
+  "name": "bytic/omnipay-euplatesc",
+  "type": "library",
+  "license": "MIT",
+  "description": "Euplatesc driver for ThePhpLeague Omnipay multi-payment processing library",
+  "keywords": [
+    "twispay",
+    "driver",
+    "gateway",
+    "merchant",
+    "omnipay",
+    "pay",
+    "payment"
+  ],
+  "homepage": "https://github.com/ByTIC/omnipay-euplatesc",
+  "authors": [
+    {
+      "name": "Gabriel Solomon",
+      "email": "hello@gabrielsolomon.ro"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ByTIC\\Omnipay\\Twispay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ByTIC\\Omnipay\\Twispay\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "omnipay/common": "^2.3",
+    "bytic/omnipay-common": "^1.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0",
+    "phpunit/phpunit": "^6.2",
+    "mockery/mockery": "^0.9"
+  }
+}
