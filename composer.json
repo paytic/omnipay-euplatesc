@@ -21,12 +21,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Twispay\\": "src/"
+      "ByTIC\\Omnipay\\Euplatesc\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Twispay\\Tests\\": "tests/"
+      "ByTIC\\Omnipay\\Euplatesc\\Tests\\": "tests/"
     }
   },
   "require": {
