@@ -2,13 +2,16 @@
 
 namespace ByTIC\Omnipay\Euplatesc;
 
+use ByTIC\Omnipay\Euplatesc\Message\CompletePurchaseRequest;
 use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
+use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
+use ByTIC\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
- * @package ByTIC\Mobilpay\Twispay
+ * @package ByTIC\Omnipay\Euplatesc
  *
  * @method RequestInterface authorize(array $options = [])
  * @method RequestInterface completeAuthorize(array $options = [])
@@ -22,38 +25,29 @@ use Omnipay\Common\Message\RequestInterface;
  */
 class Gateway extends AbstractGateway
 {
+    use HasIntegrationParametersTrait;
+
+    protected $endpointLive = 'https://secure.euplatesc.ro/tdsprocess/tranzactd.php';
+
+    protected $endpointSandbox = 'https://secure.euplatesc.ro/tdsprocess/tranzactd.php';
 
     /**
-     * @var string
+     * @return bool
      */
-    protected $endpointSandbox = 'http://sandboxsecure.mobilpay.ro';
-
-    /**
-     * @var string
-     */
-    protected $endpointLive = 'https://secure.mobilpay.ro';
-
-    /**
-     * @var string
-     */
-    protected $signature;
-
-    /**
-     * @var string|null Certificate Content
-     */
-    protected $certificate;
-
-    /**
-     * @var string|null PrivateKey Content
-     */
-    protected $privateKey;
+    public function isActive()
+    {
+        if ($this->getMid() && $this->getKey()) {
+            return true;
+        }
+        return false;
+    }
 
     /**
      * @inheritdoc
      */
     public function getName()
     {
-        return 'Twispay';
+        return 'Euplatesc';
     }
 
     // ------------ REQUESTS ------------ //
@@ -102,9 +96,8 @@ class Gateway extends AbstractGateway
     {
         return [
             'testMode' => true, // Must be the 1st in the list!
-            'signature' => $this->getSignature(),
-            'certificate' => $this->getCertificate(),
-            'privateKey' => $this->getPrivateKey(),
+            'mid' => $this->getMid(),
+            'key' => $this->getKey()
         ];
     }
 
@@ -131,54 +124,5 @@ class Gateway extends AbstractGateway
     }
 
     // ------------ Getter'n'Setters ------------ //
-
-    /**
-     * @return mixed
-     */
-    public function getSignature()
-    {
-        return $this->signature;
-    }
-
-    /**
-     * @param mixed $signature
-     */
-    public function setSignature($signature)
-    {
-        $this->signature = $signature;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getCertificate()
-    {
-        return $this->certificate;
-    }
-
-    /**
-     * @param null|string $certificate
-     */
-    public function setCertificate($certificate)
-    {
-        $this->certificate = $certificate;
-    }
-
-
-    /**
-     * @return string
-     */
-    public function getPrivateKey()
-    {
-        return $this->privateKey;
-    }
-
-    /**
-     * @param string $privateKey
-     */
-    public function setPrivateKey(string $privateKey)
-    {
-        $this->privateKey = $privateKey;
-    }
 
 }

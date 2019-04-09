@@ -13,7 +13,6 @@
          failOnWarning="true"
          stopOnError="false"
          stopOnFailure="false"
-         syntaxCheck="true"
          verbose="true"
 >
 
