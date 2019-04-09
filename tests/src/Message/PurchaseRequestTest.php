@@ -46,8 +46,8 @@ class PurchaseRequestTest extends AbstractRequestTest
     public function testSend()
     {
         $data = [
-            'mid' => $_ENV['EUPLATESC_MID'],
-            'key' => $_ENV['EUPLATESC_KEY'],
+            'mid' => getenv('EUPLATESC_MID'),
+            'key' => getenv('EUPLATESC_KEY'),
             'orderId' => '99999897987987987987987',
             'orderName' => 'Test tranzaction 9999999999',
             'notifyUrl' => 'http://localhost',

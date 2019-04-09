@@ -20,7 +20,7 @@ class ServerCompletePurchaseRequestTest extends AbstractRequestTest
         $httpRequest = HttpRequestBuilder::createCompletePurchase();
 
         $request = new ServerCompletePurchaseRequest($client, $httpRequest);
-        $request->setKey($_ENV['EUPLATESC_KEY']);
+        $request->setKey(getenv('EUPLATESC_KEY'));
 
         /** @var CompletePurchaseResponse $response */
         $response = $request->send();
