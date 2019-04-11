@@ -8,7 +8,6 @@ before_script:
   - sudo apt-get install ca-certificates
   - sudo curl http://curl.haxx.se/ca/cacert.pem -o /usr/local/share/cacert.pem
   - export SSL_CERT_FILE=/usr/local/share/cacert.pem
-  - curl --cacert /usr/local/share/cacert.pem https://secure.euplatesc.ro
 
 script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml
