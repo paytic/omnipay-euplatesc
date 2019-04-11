@@ -5,6 +5,7 @@ php:
 
 before_script:
   - composer install --no-interaction
+  - sudo apt-get install --reinstall ca-certificates
 
 script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml

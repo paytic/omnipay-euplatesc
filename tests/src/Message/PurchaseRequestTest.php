@@ -59,6 +59,33 @@ class PurchaseRequestTest extends AbstractRequestTest
             'amount' => 20.00,
             'currency' => 'RON',
         ];
+        $this->sendValidation($data);
+    }
+
+    public function testSendWithSpecialCharacters()
+    {
+        $data = [
+            'mid' => getenv('EUPLATESC_MID'),
+            'key' => getenv('EUPLATESC_KEY'),
+            'orderId' => "999998'!@#$%^&*()97987987987987987",
+            'orderName' => "Test tranzaction 9999999999'!@#$%^&*()",
+            'notifyUrl' => 'http://localhost',
+            'returnUrl' => 'http://localhost',
+            'endpointUrl' => 'https://secure.euplatesc.ro/tdsprocess/tranzactd.php',
+            'card' => [
+                'first_name' => '',
+            ],
+            'amount' => 20.00,
+            'currency' => 'RON',
+        ];
+        $this->sendValidation($data);
+    }
+
+    /**
+     * @param $data
+     */
+    protected function sendValidation($data)
+    {
         $request = $this->newRequestWithInitTest(PurchaseRequest::class, $data);
 
         /** @var PurchaseResponse $response */
@@ -92,7 +119,6 @@ class PurchaseRequestTest extends AbstractRequestTest
 
         self::assertContains('Num&#259;r comand&#259;:', $body);
         self::assertContains('Descriere comand&#259;:', $body);
-        self::assertContains($data['orderId'], $body);
-        self::assertContains($data['orderName'], $body);
+        self::assertContains(number_format($data['amount'], 2) . ' LEI', $body);
     }
 }
