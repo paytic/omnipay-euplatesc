@@ -5,7 +5,8 @@ php:
 
 before_script:
   - composer install --no-interaction
-  - sudo apt-get install --reinstall ca-certificates
+  - sudo apt-get install --reinstall apt-transport-https ca-certificates -y
+  - sudo update-ca-certificates
 
 script:
   - vendor/bin/phpunit --coverage-clover=coverage.xml
