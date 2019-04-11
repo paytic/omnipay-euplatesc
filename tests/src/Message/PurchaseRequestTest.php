@@ -103,6 +103,7 @@ class PurchaseRequestTest extends AbstractRequestTest
                 HttpClient::SSL_CERT_AUTHORITY => 'system'
             ]
         );
+        $client->setSslVerification(false, false);
         $gatewayResponse = $client->post($response->getRedirectUrl(), null, $redirectData)->send();
         self::assertSame(200, $gatewayResponse->getStatusCode());
         self::assertStringContainsString('secure.euplatesc.ro', $gatewayResponse->getEffectiveUrl());
