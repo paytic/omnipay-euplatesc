@@ -100,7 +100,7 @@ class PurchaseRequestTest extends AbstractRequestTest
             [
                 'curl.CURLOPT_SSL_VERIFYHOST' => false,
                 'curl.CURLOPT_SSL_VERIFYPEER' => false,
-                HttpClient::SSL_CERT_AUTHORITY => false
+                HttpClient::SSL_CERT_AUTHORITY => 'system'
             ]
         );
         $gatewayResponse = $client->post($response->getRedirectUrl(), null, $redirectData)->send();
