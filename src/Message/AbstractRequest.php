@@ -3,6 +3,7 @@
 namespace ByTIC\Omnipay\Euplatesc\Message;
 
 use ByTIC\Omnipay\Common\Helper;
+use ByTIC\Omnipay\Common\Message\Traits\HasLanguageRequestTrait;
 use ByTIC\Omnipay\Common\Message\Traits\SendDataRequestTrait;
 use ByTIC\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\Message\AbstractRequest as CommonAbstractRequest;
@@ -14,6 +15,7 @@ use Omnipay\Common\Message\AbstractRequest as CommonAbstractRequest;
 abstract class AbstractRequest extends CommonAbstractRequest
 {
     use SendDataRequestTrait;
+    use HasLanguageRequestTrait;
     use HasIntegrationParametersTrait;
 
     /**

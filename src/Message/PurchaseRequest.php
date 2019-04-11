@@ -47,6 +47,7 @@ class PurchaseRequest extends AbstractRequest
 
         $data['redirectUrl'] = $this->getEndpointUrl();
         $data["fp_hash"] = $this->generateHmac($this->generateHashString($data['order']));
+        $data["lang"] = $this->getLang();
 
         return $data;
     }

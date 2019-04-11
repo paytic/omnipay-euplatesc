@@ -37,7 +37,7 @@ class PurchaseResponseTest extends AbstractResponseTest
 
         $data = $response->getRedirectData();
 
-        self::assertCount(10, $data);
+        self::assertCount(11, $data);
         self::assertSame('999', $data['fp_hash']);
     }
 }
