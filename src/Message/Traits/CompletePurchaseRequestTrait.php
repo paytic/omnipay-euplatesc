@@ -16,7 +16,7 @@ trait CompletePurchaseRequestTrait
     /**
      * @return mixed
      */
-    protected function isValidNotification()
+    public function isValidNotification()
     {
         return $this->hasPOST('amount', 'invoice_id', 'merch_id', 'ep_id', 'fp_hash');
     }
