@@ -124,5 +124,4 @@ class Gateway extends AbstractGateway
     }
 
     // ------------ Getter'n'Setters ------------ //
-
 }

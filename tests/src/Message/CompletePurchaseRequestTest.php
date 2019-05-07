@@ -13,7 +13,6 @@ use Guzzle\Http\Client as HttpClient;
  */
 class CompletePurchaseRequestTest extends AbstractRequestTest
 {
-
     public function testSimpleSend()
     {
         $client = new HttpClient();

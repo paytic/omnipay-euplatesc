@@ -13,7 +13,6 @@ use Guzzle\Http\Client as HttpClient;
  */
 class ServerCompletePurchaseRequestTest extends AbstractRequestTest
 {
-
     public function testSimpleSend()
     {
         $client = new HttpClient();
@@ -29,5 +28,4 @@ class ServerCompletePurchaseRequestTest extends AbstractRequestTest
         self::assertSame('2015-01-22 14:48:55', $response->getTransactionDate());
         self::assertSame(true, $response->isSuccessful());
     }
-
 }
