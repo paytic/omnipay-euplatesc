@@ -21,7 +21,6 @@ use Omnipay\Common\Message\RequestInterface;
  * @method RequestInterface createCard(array $options = [])
  * @method RequestInterface updateCard(array $options = [])
  * @method RequestInterface deleteCard(array $options = [])
-
  */
 class Gateway extends AbstractGateway
 {
@@ -59,10 +58,7 @@ class Gateway extends AbstractGateway
     {
         $parameters['endpointUrl'] = $this->getEndpointUrl();
 
-        return $this->createRequest(
-            PurchaseRequest::class,
-            array_merge($this->getDefaultParameters(), $parameters)
-        );
+        return $this->createRequest(PurchaseRequest::class, $parameters);
     }
 
     /**
@@ -70,10 +66,7 @@ class Gateway extends AbstractGateway
      */
     public function completePurchase(array $parameters = []): RequestInterface
     {
-        return $this->createRequest(
-            CompletePurchaseRequest::class,
-            array_merge($this->getDefaultParameters(), $parameters)
-        );
+        return $this->createRequest(CompletePurchaseRequest::class, $parameters);
     }
 
     /**
@@ -81,10 +74,7 @@ class Gateway extends AbstractGateway
      */
     public function serverCompletePurchase(array $parameters = []): RequestInterface
     {
-        return $this->createRequest(
-            ServerCompletePurchaseRequest::class,
-            array_merge($this->getDefaultParameters(), $parameters)
-        );
+        return $this->createRequest(ServerCompletePurchaseRequest::class, $parameters);
     }
     // ------------ PARAMETERS ------------ //
 
@@ -114,7 +104,7 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * @param  boolean $value
+     * @param boolean $value
      * @return $this|AbstractGateway
      */
     public function setTestMode($value)

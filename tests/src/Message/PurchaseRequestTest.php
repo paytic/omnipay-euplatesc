@@ -5,7 +5,6 @@ namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
 use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
 use ByTIC\Omnipay\Euplatesc\Message\PurchaseResponse;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Guzzle\Http\Client as HttpClient;
 
 /**
  * Class PurchaseRequestTest
@@ -95,18 +94,19 @@ class PurchaseRequestTest extends AbstractRequestTest
         $redirectData = $response->getRedirectData();
         self::assertCount(18, $redirectData);
 
-        $client = new HttpClient();
+        $client = $this->getHttpClient();
         $client->setConfig(
             [
                 'curl.CURLOPT_SSL_VERIFYHOST' => false,
                 'curl.CURLOPT_SSL_VERIFYPEER' => false,
-                HttpClient::SSL_CERT_AUTHORITY => 'system'
+//                HttpClient::SSL_CERT_AUTHORITY => 'system'
             ]
         );
+
         $client->setSslVerification(false, false);
         $gatewayResponse = $client->post($response->getRedirectUrl(), null, $redirectData)->send();
         self::assertSame(200, $gatewayResponse->getStatusCode());
-        self::assertStringContainsString('secure.euplatesc.ro', $gatewayResponse->getEffectiveUrl());
+        self::assertTrue(strpos($gatewayResponse->getEffectiveUrl(), 'secure.euplatesc.ro') !== false);
 
         //Validate first Response
         $body = strtolower($gatewayResponse->getBody(true));

@@ -5,7 +5,6 @@ namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
 use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
 use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseResponse;
 use ByTIC\Omnipay\Euplatesc\Tests\Fixtures\HttpRequestBuilder;
-use Guzzle\Http\Client as HttpClient;
 
 /**
  * Class ServerCompletePurchaseRequestTest
@@ -15,7 +14,8 @@ class ServerCompletePurchaseRequestTest extends AbstractRequestTest
 {
     public function testSimpleSend()
     {
-        $client = new HttpClient();
+        $client = $this->getHttpClient();
+
         $httpRequest = HttpRequestBuilder::createCompletePurchase();
 
         $request = new ServerCompletePurchaseRequest($client, $httpRequest);

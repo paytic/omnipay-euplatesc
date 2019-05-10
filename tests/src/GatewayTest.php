@@ -5,40 +5,42 @@ namespace ByTIC\Omnipay\Euplatesc\Tests;
 use ByTIC\Omnipay\Euplatesc\Gateway;
 use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
 
+use Omnipay\Tests\GatewayTestCase;
+
+
 /**
  * Class HelperTest
  * @package ByTIC\Omnipay\Twispay\Tests
  */
-class GatewayTest extends AbstractTest
+class GatewayTest extends GatewayTestCase
 {
     public function testGetSecureUrl()
     {
-        $gateway = new Gateway();
-
         // INITIAL TEST MODE IS TRUE
         self::assertEquals(
             'https://secure.euplatesc.ro/tdsprocess/tranzactd.php',
-            $gateway->getEndpointUrl()
+            $this->gateway->getEndpointUrl()
         );
 
-        $gateway->setTestMode(true);
+        $this->gateway->setTestMode(true);
         self::assertEquals(
             'https://secure.euplatesc.ro/tdsprocess/tranzactd.php',
-            $gateway->getEndpointUrl()
+            $this->gateway->getEndpointUrl()
         );
 
-        $gateway->setTestMode(false);
+        $this->gateway->setTestMode(false);
         self::assertEquals(
             'https://secure.euplatesc.ro/tdsprocess/tranzactd.php',
-            $gateway->getEndpointUrl()
+            $this->gateway->getEndpointUrl()
         );
     }
 
-    public function testPurchaseRequestEndpointUrl()
+    public function setUp()
     {
-        $gateway = new Gateway();
-
-        $request = $gateway->purchase();
-        self::assertInstanceOf(PurchaseRequest::class, $request);
+        parent::setUp();
+        $this->gateway = new Gateway(
+            $this->getHttpClient(),
+            $this->getHttpRequest()
+        );
     }
 }

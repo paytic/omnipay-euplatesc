@@ -4,9 +4,7 @@ namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
 
 use ByTIC\Omnipay\Euplatesc\Message\AbstractRequest;
 use ByTIC\Omnipay\Euplatesc\Tests\AbstractTest;
-use Guzzle\Http\Client as HttpClient;
 use Omnipay\Common\Message\AbstractResponse;
-use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
  * Class AbstractResponseTest
@@ -22,8 +20,8 @@ abstract class AbstractResponseTest extends AbstractTest
      */
     protected function newResponse($class, $data = [])
     {
-        $client = new HttpClient();
-        $request = HttpRequest::createFromGlobals();
+        $client = $this->getHttpClient();
+        $request = $this->getHttpRequest();
         /** @var AbstractRequest $request */
         $request = new $class($client, $request);
         if ($request->sendData($data)) {
