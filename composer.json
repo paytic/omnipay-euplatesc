@@ -22,7 +22,8 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/bytic/omnipay-tests"
+      "url": "https://github.com/bytic/omnipay-tests",
+      "no-api": true
     }
   ],
   "autoload": {
