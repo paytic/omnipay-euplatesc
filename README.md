@@ -18,7 +18,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "bytic/euplatesc": "^1.0"
+        "bytic/omnipay-euplatesc": "^2.0"
     }
 }
 ```
