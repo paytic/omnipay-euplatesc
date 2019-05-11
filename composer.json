@@ -19,13 +19,6 @@
       "email": "hello@gabrielsolomon.ro"
     }
   ],
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/bytic/omnipay-tests",
-      "no-api": true
-    }
-  ],
   "autoload": {
     "psr-4": {
       "ByTIC\\Omnipay\\Euplatesc\\": "src/"
@@ -39,10 +32,10 @@
   },
   "require": {
     "php": "^7.0",
-    "bytic/omnipay-common": "^2.0"
+    "bytic/omnipay-common": "^3.0"
   },
   "require-dev": {
-    "omnipay/tests": "^2.0",
+    "omnipay/tests": "^3.0",
     "vlucas/phpdotenv": "^2.3"
   }
 }
