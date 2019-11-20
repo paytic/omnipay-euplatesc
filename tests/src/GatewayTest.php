@@ -3,9 +3,7 @@
 namespace ByTIC\Omnipay\Euplatesc\Tests;
 
 use ByTIC\Omnipay\Euplatesc\Gateway;
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
 use Omnipay\Tests\GatewayTestCase;
-
 
 /**
  * Class HelperTest
