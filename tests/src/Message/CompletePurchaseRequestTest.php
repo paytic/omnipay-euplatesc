@@ -10,21 +10,14 @@ use ByTIC\Omnipay\Euplatesc\Tests\Fixtures\HttpRequestBuilder;
  * Class CompletePurchaseRequestTest
  * @package ByTIC\Omnipay\Euplatesc\Tests\Message
  */
-class CompletePurchaseRequestTest extends AbstractRequestTest
+class CompletePurchaseRequestTest extends AbstractCompletePurchaseRequestTest
 {
     public function testSimpleSend()
     {
-        $client = $this->getHttpClient();
-        $httpRequest = HttpRequestBuilder::createServerCompletePurchase();
-
-        $request = new CompletePurchaseRequest($client, $httpRequest);
-        $request->setKey(getenv('EUPLATESC_KEY'));
-
-        /** @var CompletePurchaseResponse $response */
-        $response = $request->send();
-        self::assertInstanceOf(CompletePurchaseResponse::class, $response);
-        self::assertSame($httpRequest->request->get('invoice_id'), $response->getTransactionId());
-        self::assertSame('2015-01-22 14:48:55', $response->getTransactionDate());
-        self::assertSame(true, $response->isSuccessful());
+        $this->simpleSendAssertions(
+            HttpRequestBuilder::createCompletePurchase(),
+            CompletePurchaseRequest::class,
+            CompletePurchaseResponse::class
+        );
     }
 }
