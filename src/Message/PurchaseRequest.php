@@ -85,6 +85,7 @@ class PurchaseRequest extends AbstractRequest
             'email' => $card->getEmail(),
             'phone' => $card->getPhone(),
             'fax' => $card->getFax(),
+            'ExtraData'  => $this->getParameter('ExtraData'),
         ];
     }
 

@@ -4,7 +4,7 @@
   "license": "MIT",
   "description": "Euplatesc driver for ThePhpLeague Omnipay multi-payment processing library",
   "keywords": [
-    "twispay",
+    "euplatesc",
     "driver",
     "gateway",
     "merchant",

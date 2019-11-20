@@ -32,11 +32,29 @@ trait HasIntegrationParametersTrait
     {
         return $this->getParameter('mid');
     }
+
     /**
      * @return mixed
      */
     public function getKey()
     {
         return $this->getParameter('key');
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function setExtraData($value)
+    {
+        return $this->setParameter('ExtraData', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExtraData()
+    {
+        return $this->getParameter('ExtraData');
     }
 }
