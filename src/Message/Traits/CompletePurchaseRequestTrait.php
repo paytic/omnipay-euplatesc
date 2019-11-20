@@ -53,9 +53,9 @@ trait CompletePurchaseRequestTrait
     {
         $return = "";
         $fields = $this->fields;
-        foreach ($fields as $f) {
-            $d = addslashes(trim($this->httpRequest->request->get($f)));
-            $return .= Helper::generateHashFromString($d);
+        foreach ($fields as $field) {
+            $value = addslashes(trim($this->httpRequest->request->get($field)));
+            $return .= Helper::generateHashFromString($value);
         }
 
         return $return;
