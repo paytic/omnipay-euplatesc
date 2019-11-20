@@ -93,7 +93,7 @@ class PurchaseRequestTest extends AbstractRequestTest
         self::assertInstanceOf(PurchaseResponse::class, $response);
 
         $redirectData = $response->getRedirectData();
-        self::assertCount(18, $redirectData);
+        self::assertCount(19, $redirectData);
 
         $client = new Client();
         $gatewayResponse = $client->request(
