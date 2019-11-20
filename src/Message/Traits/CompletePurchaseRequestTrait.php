@@ -13,6 +13,19 @@ trait CompletePurchaseRequestTrait
 {
     use GatewayNotificationRequestTrait;
 
+    public $fields = [
+        'amount',
+        'curr',
+        'invoice_id',
+        'ep_id',
+        'merch_id',
+        'action',
+        'message',
+        'approval',
+        'timestamp',
+        'nonce',
+    ];
+
     /**
      * @return mixed
      */
@@ -39,18 +52,7 @@ trait CompletePurchaseRequestTrait
     public function generateHashString()
     {
         $return = "";
-        $fields = [
-            'amount',
-            'curr',
-            'invoice_id',
-            'ep_id',
-            'merch_id',
-            'action',
-            'message',
-            'approval',
-            'timestamp',
-            'nonce',
-        ];
+        $fields = $this->fields;
         foreach ($fields as $f) {
             $d = addslashes(trim($this->httpRequest->request->get($f)));
             $return .= Helper::generateHashFromString($d);

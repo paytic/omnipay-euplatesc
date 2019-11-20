@@ -39,4 +39,13 @@ trait HasIntegrationParametersTrait
     {
         return $this->getParameter('key');
     }
+
+    public function setExtraData($value) {
+        return $this->setParameter('ExtraData', $value);
+    }
+
+    public function getExtraData()
+    {
+        return $this->getParameter('ExtraData');
+    }
 }
