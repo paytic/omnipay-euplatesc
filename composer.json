@@ -38,7 +38,7 @@
     }
   },
   "require": {
-    "php": "^7.0",
+    "php": "^7.0|^8.0",
     "bytic/omnipay-common": "^2.0"
   },
   "require-dev": {
