@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
+namespace Paytic\Omnipay\Euplatesc\Tests\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseResponse;
-use ByTIC\Omnipay\Euplatesc\Tests\Fixtures\HttpRequestBuilder;
+use Paytic\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Message\ServerCompletePurchaseResponse;
+use Paytic\Omnipay\Euplatesc\Tests\Fixtures\HttpRequestBuilder;
 
 /**
  * Class ServerCompletePurchaseRequestTest
- * @package ByTIC\Omnipay\Euplatesc\Tests\Message
+ * @package Paytic\Omnipay\Euplatesc\Tests\Message
  */
 class ServerCompletePurchaseRequestTest extends AbstractCompletePurchaseRequestTest
 {

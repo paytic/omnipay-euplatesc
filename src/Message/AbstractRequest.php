@@ -1,11 +1,11 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message;
+namespace Paytic\Omnipay\Euplatesc\Message;
 
-use ByTIC\Omnipay\Common\Helper;
-use ByTIC\Omnipay\Common\Message\Traits\HasLanguageRequestTrait;
-use ByTIC\Omnipay\Common\Message\Traits\SendDataRequestTrait;
-use ByTIC\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
+use Paytic\Omnipay\Common\Helper;
+use Paytic\Omnipay\Common\Message\Traits\HasLanguageRequestTrait;
+use Paytic\Omnipay\Common\Message\Traits\SendDataRequestTrait;
+use Paytic\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\Message\AbstractRequest as CommonAbstractRequest;
 
 /**

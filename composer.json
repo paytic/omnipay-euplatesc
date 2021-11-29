@@ -1,5 +1,5 @@
 {
-  "name": "bytic/omnipay-euplatesc",
+  "name": "paytic/omnipay-euplatesc",
   "type": "library",
   "license": "MIT",
   "description": "Euplatesc driver for ThePhpLeague Omnipay multi-payment processing library",
@@ -12,7 +12,7 @@
     "pay",
     "payment"
   ],
-  "homepage": "https://github.com/ByTIC/omnipay-euplatesc",
+  "homepage": "https://github.com/paytic/omnipay-euplatesc",
   "authors": [
     {
       "name": "Gabriel Solomon",
@@ -21,21 +21,21 @@
   ],
   "autoload": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Euplatesc\\": "src/"
+      "Paytic\\Omnipay\\Euplatesc\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ByTIC\\Omnipay\\Euplatesc\\Tests\\Fixtures\\": "tests/fixtures",
-      "ByTIC\\Omnipay\\Euplatesc\\Tests\\": "tests/src"
+      "Paytic\\Omnipay\\Euplatesc\\Tests\\Fixtures\\": "tests/fixtures",
+      "Paytic\\Omnipay\\Euplatesc\\Tests\\": "tests/src"
     }
   },
   "require": {
     "php": "^7.0|^8.0",
-    "bytic/omnipay-common": "^3.0"
+    "paytic/omnipay-common": "^3.0"
   },
   "require-dev": {
-    "omnipay/tests": "^3.0",
+    "omnipay/tests": "^3.0|^4.0",
     "vlucas/phpdotenv": "^2.3"
   }
 }

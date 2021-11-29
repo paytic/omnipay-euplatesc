@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
+namespace Paytic\Omnipay\Euplatesc\Tests\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\AbstractRequest;
-use ByTIC\Omnipay\Euplatesc\Tests\AbstractTest;
+use Paytic\Omnipay\Euplatesc\Message\AbstractRequest;
+use Paytic\Omnipay\Euplatesc\Tests\AbstractTest;
 use Symfony\Component\HttpFoundation\Request as HttpRequest;
 
 /**
  * Class AbstractRequestTest
- * @package ByTIC\Omnipay\Euplatesc\Tests\Message
+ * @package Paytic\Omnipay\Euplatesc\Tests\Message
  */
 abstract class AbstractRequestTest extends AbstractTest
 {

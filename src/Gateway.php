@@ -1,17 +1,17 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc;
+namespace Paytic\Omnipay\Euplatesc;
 
-use ByTIC\Omnipay\Euplatesc\Message\CompletePurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
+use Paytic\Omnipay\Euplatesc\Message\CompletePurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Message\PurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
  * Class Gateway
- * @package ByTIC\Omnipay\Euplatesc
+ * @package Paytic\Omnipay\Euplatesc
  *
  * @method RequestInterface authorize(array $options = [])
  * @method RequestInterface completeAuthorize(array $options = [])

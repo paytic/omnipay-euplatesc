@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message\Traits;
+namespace Paytic\Omnipay\Euplatesc\Message\Traits;
 
-use ByTIC\Omnipay\Common\Message\Traits\GatewayNotificationRequestTrait;
-use ByTIC\Omnipay\Euplatesc\Helper;
+use Paytic\Omnipay\Common\Message\Traits\GatewayNotificationRequestTrait;
+use Paytic\Omnipay\Euplatesc\Helper;
 
 /**
  * Class CompletePurchaseRequestTrait
- * @package ByTIC\Omnipay\Euplatesc\Message\Traits
+ * @package Paytic\Omnipay\Euplatesc\Message\Traits
  */
 trait CompletePurchaseRequestTrait
 {

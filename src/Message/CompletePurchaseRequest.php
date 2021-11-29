@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message;
+namespace Paytic\Omnipay\Euplatesc\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\Traits\CompletePurchaseRequestTrait;
+use Paytic\Omnipay\Euplatesc\Message\Traits\CompletePurchaseRequestTrait;
 
 /**
  * Class PurchaseResponse

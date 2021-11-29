@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Traits;
+namespace Paytic\Omnipay\Euplatesc\Traits;
 
 /**
  * Trait HasIntegrationParametersTrait
- * @package ByTIC\Omnipay\Euplatesc\Traits
+ * @package Paytic\Omnipay\Euplatesc\Traits
  */
 trait HasIntegrationParametersTrait
 {

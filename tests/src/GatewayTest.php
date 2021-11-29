@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests;
+namespace Paytic\Omnipay\Euplatesc\Tests;
 
-use ByTIC\Omnipay\Euplatesc\Gateway;
+use Paytic\Omnipay\Euplatesc\Gateway;
 use Omnipay\Tests\GatewayTestCase;
 
 /**
@@ -32,7 +32,7 @@ class GatewayTest extends GatewayTestCase
         );
     }
 
-    public function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->gateway = new Gateway(

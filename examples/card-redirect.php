@@ -2,7 +2,7 @@
 
 require 'init.php';
 
-$gateway = new \ByTIC\Omnipay\Euplatesc\Gateway();
+$gateway = new \Paytic\Omnipay\Euplatesc\Gateway();
 
 $parameters = require TEST_FIXTURE_PATH . 'simpleOrderParams.php';
 $parameters = require TEST_FIXTURE_PATH . 'enviromentParams.php';

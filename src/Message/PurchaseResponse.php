@@ -1,8 +1,8 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message;
+namespace Paytic\Omnipay\Euplatesc\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\RedirectHtmlTrait;
+use Paytic\Omnipay\Common\Message\Traits\RedirectHtmlTrait;
 use Omnipay\Common\Message\RedirectResponseInterface;
 
 /**

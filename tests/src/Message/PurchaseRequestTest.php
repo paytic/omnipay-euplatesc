@@ -1,15 +1,15 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
+namespace Paytic\Omnipay\Euplatesc\Tests\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseResponse;
+use Paytic\Omnipay\Euplatesc\Message\PurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Message\PurchaseResponse;
 use Omnipay\Common\Exception\InvalidRequestException;
 use Omnipay\Common\Http\Client;
 
 /**
  * Class PurchaseRequestTest
- * @package ByTIC\Omnipay\Euplatesc\Tests\Message
+ * @package Paytic\Omnipay\Euplatesc\Tests\Message
  */
 class PurchaseRequestTest extends AbstractRequestTest
 {
@@ -108,7 +108,7 @@ class PurchaseRequestTest extends AbstractRequestTest
 
         //Validate first Response
         $body = strtolower($gatewayResponse->getBody(true));
-        self::assertContains("<meta http-equiv='refresh' content=", $body);
+        self::stringContains("<meta http-equiv='refresh' content=", $body);
 
         if (preg_match('/\<meta[^\>]+http-equiv=\'refresh\' content=\'.*?url=(.*?)\'/i', $body, $matches)) {
             $url = $matches[1];
@@ -116,8 +116,8 @@ class PurchaseRequestTest extends AbstractRequestTest
             $body = $gatewayResponse->getBody()->getContents();
         }
 
-        self::assertContains('Num&#259;r comand&#259;:', $body);
-        self::assertContains('Descriere comand&#259;:', $body);
-        self::assertContains(number_format($data['amount'], 2) . ' LEI', $body);
+        self::stringContains('Num&#259;r comand&#259;:', $body);
+        self::stringContains('Descriere comand&#259;:', $body);
+        self::stringContains(number_format($data['amount'], 2) . ' LEI', $body);
     }
 }

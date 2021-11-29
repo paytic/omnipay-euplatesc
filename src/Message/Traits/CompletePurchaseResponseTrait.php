@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message\Traits;
+namespace Paytic\Omnipay\Euplatesc\Message\Traits;
 
-use ByTIC\Omnipay\Common\Message\Traits\GatewayNotificationResponseTrait;
+use Paytic\Omnipay\Common\Message\Traits\GatewayNotificationResponseTrait;
 use DateTime;
 
 /**
  * Class CompletePurchaseResponseTrait
- * @package ByTIC\Omnipay\Euplatesc\Message\Traits
+ * @package Paytic\Omnipay\Euplatesc\Message\Traits
  */
 trait CompletePurchaseResponseTrait
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
+namespace Paytic\Omnipay\Euplatesc\Tests\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\AbstractRequest;
-use ByTIC\Omnipay\Euplatesc\Tests\AbstractTest;
+use Paytic\Omnipay\Euplatesc\Message\AbstractRequest;
+use Paytic\Omnipay\Euplatesc\Tests\AbstractTest;
 use Omnipay\Common\Message\AbstractResponse;
 
 /**
  * Class AbstractResponseTest
- * @package ByTIC\Omnipay\Euplatesc\Tests\Message
+ * @package Paytic\Omnipay\Euplatesc\Tests\Message
  */
 abstract class AbstractResponseTest extends AbstractTest
 {

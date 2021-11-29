@@ -1,9 +1,9 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Message;
+namespace Paytic\Omnipay\Euplatesc\Message;
 
-use ByTIC\Omnipay\Common\Message\Traits\RequestDataGetWithValidationTrait;
-use ByTIC\Omnipay\Euplatesc\Helper;
+use Paytic\Omnipay\Common\Message\Traits\RequestDataGetWithValidationTrait;
+use Paytic\Omnipay\Euplatesc\Helper;
 
 /**
  * PayU Purchase Request

@@ -1,13 +1,13 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc\Tests\Message;
+namespace Paytic\Omnipay\Euplatesc\Tests\Message;
 
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseRequest;
-use ByTIC\Omnipay\Euplatesc\Message\PurchaseResponse;
+use Paytic\Omnipay\Euplatesc\Message\PurchaseRequest;
+use Paytic\Omnipay\Euplatesc\Message\PurchaseResponse;
 
 /**
  * Class PurchaseResponseTest
- * @package ByTIC\Omnipay\Euplatesc\Tests\Message
+ * @package Paytic\Omnipay\Euplatesc\Tests\Message
  */
 class PurchaseResponseTest extends AbstractResponseTest
 {

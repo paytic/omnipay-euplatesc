@@ -1,10 +1,10 @@
 <?php
 
-namespace ByTIC\Omnipay\Euplatesc;
+namespace Paytic\Omnipay\Euplatesc;
 
 /**
  * Class Helper
- * @package ByTIC\Omnipay\Euplatesc
+ * @package Paytic\Omnipay\Euplatesc
  */
 class Helper
 {
