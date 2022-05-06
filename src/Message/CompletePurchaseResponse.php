@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Paytic\Omnipay\Euplatesc\Message;
 
@@ -11,6 +12,8 @@ use Paytic\Omnipay\Euplatesc\Message\Traits\CompletePurchaseResponseTrait;
  */
 class CompletePurchaseResponse extends AbstractResponse
 {
+    public const CODE_SUCCESS = '0';
+
     use ConfirmHtmlTrait;
     use CompletePurchaseResponseTrait;
 }

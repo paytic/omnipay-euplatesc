@@ -1,9 +1,11 @@
 <?php
+declare(strict_types=1);
 
 namespace Paytic\Omnipay\Euplatesc\Message\Traits;
 
 use Paytic\Omnipay\Common\Message\Traits\GatewayNotificationResponseTrait;
 use DateTime;
+use Paytic\Omnipay\Euplatesc\Message\CompletePurchaseResponse;
 
 /**
  * Class CompletePurchaseResponseTrait
@@ -18,9 +20,14 @@ trait CompletePurchaseResponseTrait
      *
      * @return boolean
      */
-    public function isSuccessful()
+    public function isSuccessful(): bool
     {
-        return $this->getCode() == 0;
+        $code = $this->getCode();
+        if (is_int($code)) {
+            $code = (string) $code;
+        }
+
+        return $code === CompletePurchaseResponse::CODE_SUCCESS;
     }
 
     /** @noinspection PhpMissingParentCallCommonInspection
