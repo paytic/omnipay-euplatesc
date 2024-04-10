@@ -2,11 +2,11 @@
 
 namespace Paytic\Omnipay\Euplatesc;
 
+use Paytic\Omnipay\Common\Gateway\AbstractGateway;
 use Paytic\Omnipay\Euplatesc\Message\CompletePurchaseRequest;
 use Paytic\Omnipay\Euplatesc\Message\PurchaseRequest;
 use Paytic\Omnipay\Euplatesc\Message\ServerCompletePurchaseRequest;
 use Paytic\Omnipay\Euplatesc\Traits\HasIntegrationParametersTrait;
-use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\RequestInterface;
 
 /**
